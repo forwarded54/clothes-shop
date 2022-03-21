@@ -1,0 +1,155 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  @extend %quicksand-500;
+  color: $default;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header--404-page {
+  background-color: $bg;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  .pagination__list {
+    display: flex;
+    padding: 0 35px;
+  }
+  &__link--active {
+    color: $accent;
+  }
+  &__arrows {
+    text-transform: uppercase;
+    position: relative;
+    &::before {
+      content: "";
+      width: 5px;
+      height: 10px;
+
+      position: absolute;
+      top: 8px;
+    }
+  }
+  &__item {
+    padding: 0 15px;
+  }
+  &__prev {
+    padding-left: 15px;
+    &::before  {
+      background-image: url("../images/icons/angle_left.svg");
+      left: 0;
+    }
+  }
+  &__next {
+    padding-right: 15px;
+    &::before {
+      background-image: url("../images/icons/angle_right.svg");
+      right: 0;
+    }
+  }
+}
+
+a {
+  @extend %quicksand-500;
+  color: $default;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.title {
+  @extend %roboto-700;
+  margin-bottom: 10px;
+  text-align: center;
+  color: $title;
+  font-size: 48px;
+  line-height: 65px;
+
+  text-transform: uppercase;
+}
+
+.text {
+  max-width: 570px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.breadcrumbs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+
+    background-image: url("../images/icons/home-icon.svg");
+
+    position: absolute;
+    left: 0;
+    top: 4px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    padding-right: 40px;
+    color: #727272;
+    position: relative;
+    &::after {
+      content: "";
+      width: 9px;
+      height: 10px;
+
+      background-image: url("../images/icons/angle-right.svg");
+
+      position: absolute;
+      right: 15px;
+      top: 9px;
+    }
+    &:last-child {
+      padding-right: 0;
+      color: $accent;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    color: inherit;
+  }
+}
+
+@media (max-width: 620px) {
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

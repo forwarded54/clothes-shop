@@ -1,0 +1,73 @@
+/* Video fashion
+==================== */
+.video-fashion {
+  padding: 125px 0;
+  background-color: $bg;
+  background-image: url("../images/decor/pattern.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  &__inner {
+    display: flex;
+  }
+  &__popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 530px;
+    height: 480px;
+    margin-right: 60px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &__content {
+    max-width: 570px;
+  }
+  &__subtitle {
+    margin-bottom: 5px;
+    padding-top: 75px;
+    color: $accent;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  &__title {
+    text-align: left;
+  }
+  &__text {
+    margin-bottom: 55px;
+  }
+  &__link {
+    @extend %btn;
+  }
+}
+
+@media (max-width: 1050px) {
+  .video-fashion {
+    &__inner {
+      display: block;
+    }
+    &__popup {
+      max-width: 100%;
+      background-position: center top;
+    }
+    &__content {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .video-fashion {
+    padding: 60px 0;
+    &__popup {
+      height: 275px;
+    }
+    &__subtitle {
+      padding-top: 40px;
+      font-size: 18px;
+    }
+  }
+}
